@@ -1,0 +1,1 @@
+alert('flyway-blog');
