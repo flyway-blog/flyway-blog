@@ -50,7 +50,7 @@ function getAllNews(lastdata) {
 function doCompanyNews(data) {
   var rightplace = '';
   for (var i = 0; i < data.length; i++) {
-    if (data[i].type == 'company') {
+    if (data[i].isstudy == '' || data[i].isstudy == null || data[i].isstudy == undefined ) {
       rightplace += `
       <div class="post2">
         <div class="post2-info">
@@ -77,7 +77,7 @@ function doCompanyNews(data) {
         </div>
       </div>
       `.trim();
-    } else {
+    } else if(data[i].isother == '' || data[i].isother == null || data[i].isother == undefined){
       rightplace += `
       <div class="post2">
         <div class="post2-info">

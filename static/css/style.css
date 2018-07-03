@@ -490,7 +490,7 @@ background: url(../images/bck.png) no-repeat 7px 2px;
 .post2-info{
 	float:left;
 	width:50%;
-	    padding-top:3em
+	padding-top:3em
 }
 .post2_text h3 a{
 	color:#fff;
@@ -2102,6 +2102,11 @@ h3.folw-name {
     }
     .navbar-default{
         background-color: rgba(0,0,0,0);
+    }
+    .post2_text{
+        max-height: 121px;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 }
 #logo{
