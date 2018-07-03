@@ -4,6 +4,15 @@
 ## 简介
 就是一个博客。简单易用记录生活。
 
+## 展示
+![1](./static/images/show1.png)
+
+![2](./static/images/show2.png)
+
+![3](./static/images/show3.png)
+
+![4](./static/images/show4.png)
+
 ## 产品安装和下载
 - https://github.com/flyway-blog/flyway-blog/releases
 - npm i flyway-blog
