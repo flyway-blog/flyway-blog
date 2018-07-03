@@ -1,8 +1,10 @@
 # flyway-blog
 简单易用的blog
+后台采用的node+ejs渲染，用了一点bootstrap。
+前台基本就是bootstrap+jq了。
 
 ## 简介
-就是一个博客。简单易用记录生活。
+就是一个博客。简单易用记录生活。写下来忘了的时候可以方便查看哈。
 
 ## 展示
 ![1](./static/images/show1.png)
