@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>管理员登录</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <style>
+    body {
+      font: 12px 'Lucida Sans Unicode', 'Trebuchet MS', Arial, Helvetica;
+      margin: 0;
+      background-color: #d9dee2;
+      text-align: center;
+    }
+
+    #login {
+      background-color: #fff;
+      height: 240px;
+      width: 400px;
+      margin: 0 38%;
+      margin-top: 10%;
+      padding: 30px;
+      position: absolute;
+      z-index: 0;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, .2), 0 1px 1px rgba(0, 0, 0, .2), 0 3px 0 #fff, 0 4px 0 rgba(0, 0, 0, .2), 0 6px 0 #fff, 0 7px 0 rgba(0, 0, 0, .2);
+      -moz-box-shadow: 0 0 2px rgba(0, 0, 0, .2), 1px 1px 0 rgba(0, 0, 0, .1), 3px 3px 0 rgba(255, 255, 255, 1), 4px 4px 0 rgba(0, 0, 0, .1), 6px 6px 0 rgba(255, 255, 255, 1), 7px 7px 0 rgba(0, 0, 0, .1);
+      box-shadow: 0 0 2px rgba(0, 0, 0, .2), 0 1px 1px rgba(0, 0, 0, .2), 0 3px 0 #fff, 0 4px 0 rgba(0, 0, 0, .2), 0 6px 0 #fff, 0 7px 0 rgba(0, 0, 0, .2);
+    }
+
+    fieldset {
+      border: 0;
+      padding: 0;
+      margin: 0;
+    }
+
+    #inputs input {
+      padding: 15px 15px 15px 30px;
+      margin: 0 0 10px 0;
+      width: 353px;
+      border: 1px solid #ccc;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      -moz-box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+      box-shadow: 0 1px 1px #ccc inset, 0 1px 0 #fff;
+    }
+
+    #inputs input:focus {
+      background-color: #fff;
+      border-color: #e8c291;
+      outline: none;
+      -moz-box-shadow: 0 0 0 1px #e8c291 inset;
+      -webkit-box-shadow: 0 0 0 1px #e8c291 inset;
+      box-shadow: 0 0 0 1px #e8c291 inset;
+      ;
+    }
+
+    #actions {
+      margin: 25px 0 0 0;
+    }
+
+    #submit {
+      background-color: #ffb94b;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+      -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+      -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #d69e31 #e3a037 #d5982d #e3a037;
+      float: left;
+      height: 35px;
+      padding: 0;
+      width: 120px;
+      cursor: pointer;
+      font: bold 15px Arial, Helvetica;
+      color: #8f5a0a;
+    }
+  </style>
+</head>
+
+<body>
+  <form id="login" action="/admin/login" method="post">
+    <h1>登录</h1>
+    <fieldset id="inputs">
+      <input id="username" type="text" placeholder="用户名" autofocus required name="username" />
+      <input id="password" type="password" placeholder="密码" required name="password" />
+    </fieldset>
+    <fieldset id="actions">
+      <input type="submit" id="submit" value="登录" />
+    </fieldset>
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>banner部分</title>
+  <meta charset="utf-8">
+  <!-- 最新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+
+  <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+  <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+  <style media="screen">
+    .shadow {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: 0.3;
+      filter: alpha(opacity=30);
+      left: 0;
+      top: 0;
+    }
+
+    .mod_dialog {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      position: fixed;
+      left: 0;
+      top: 0;
+    }
+
+    td {
+      vertical-align: middle !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <%-include("./components/top.nav.ejs")%>
+    <div class="content-wrap">
+      <div>
+        <!-- <form action="?" method="post" role="form">
+          <label for="navName"> 现在的名称：</label>
+          <input type="text" name="navName" id="navName" class="form-control" placeholder="现在的导航名称" />
+
+          <label for="newNavName"> 新的名称：</label>
+          <input type="text" name="newNavName" id="newNavName" class="form-control" placeholder="输入新的名称" />
+
+          <button type="submit" class="btn btn-default">添加</button>
+        </form> -->
+      </div>
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>导航位置</th>
+            <th>新的名称</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0;i<navname.length;i++){ %>
+            <tr>
+              <td>
+                <%=navname[i].ID%>
+              </td>
+              <td>
+                <%=navname[i].navName%>
+              </td>
+              <td>
+                <%=navname[i].newNavName%>
+              </td>
+              <td>
+                <a class="btn btn-warning" href="?act=mod&id=<%=navname[i].ID%>">修改</a>
+                <!-- <a class="btn btn-danger" href="?act=del&id=<%=navname[i].ID%>" onclick="return confirm('你真的要删吗？')">删除</a> -->
+              </td>
+            </tr>
+            <% } %>
+        </tbody>
+      </table>
+      <% if(typeof mod_data!='undefined'){ %>
+        <div class="shadow"></div>
+        <div class="mod_dialog">
+          <form action="?" method="post">
+            <input type="hidden" name="mod_id" value="<%= mod_data.ID %>" />
+            <br> 新的名称：
+            <input type="text" name="newNavName" value="<%= mod_data.newNavName %>" class="form-control">
+            <input class="btn btn-danger" type="submit" value="修改" />
+            <a class="btn btn-warning" href="/admin/navname">取消修改</a>
+          </form>
+        </div>
+        <% } %>
+    </div>
+  </div>
+</body>
+
+</html>

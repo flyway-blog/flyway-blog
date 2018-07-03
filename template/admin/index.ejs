@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- 最新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+    <style>
+        .changgeTime {
+            margin: 100px auto;
+            text-align: center;
+            width: 1000px;
+            height: 400px;
+            background-color: rgba(0, 0, 0, 1);
+            line-height: 400px;
+            font-size: 50px;
+            color: white;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <%-include("./components/top.nav.ejs")%>
+        <div class="row-fluid">
+            <div class="span12">
+                <h3 class="text-center">
+                    欢迎光临
+                </h3>
+                <h4 class="text-center">
+                    记录你想。
+                </h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

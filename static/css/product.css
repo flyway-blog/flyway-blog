@@ -1,0 +1,26 @@
+.post2 {
+  margin-left: 1%;
+  margin-bottom: 10px;
+}
+
+.sec_2{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sec_2 .fenlei{
+  color: white;
+  display: inline-block;
+  width: 100px;
+  height: 100%;
+  border: 1px solid;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 4px;
+}
+@media (max-width: 991px){
+  .post2{
+    width: 98%;
+  }
+}

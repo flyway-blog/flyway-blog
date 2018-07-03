@@ -1,0 +1,90 @@
+.post2 {
+  margin-left: 1%;
+  margin-bottom: 10px;
+  width: 84%;
+  min-height: 200px;
+  overflow: hidden;
+  float: none;
+  margin-left: auto;
+}
+
+.sec_2{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sec_2 .fenlei{
+  color: white;
+  display: inline-block;
+  width: 100px;
+  height: 100%;
+  border: 1px solid;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.img-responsive {
+  max-height: 160px;
+}
+.post2-pic {
+  width: 34%;
+}
+.post2-info {
+  width: 98%;
+  padding-top: 1.5rem;
+}
+#getTages{
+  float: left;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 2em;
+  width: 19%;
+}
+#getTages .fenlei{
+  position: relative;
+  color: white;
+  display: inline-block;
+  width: 100px;
+  height: 100%;
+  border: 1px solid;
+  text-align: center;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+#getTages .fenlei > span{
+  display: inline-block;
+  /* position: absolute; */
+  /* top: -14px; */
+  /* right: -12px; */
+  width: 23px;
+  border-radius: 50%;
+  color: #ef6236;
+  border: 1px solid;
+}
+#pro .rightplace{
+  float: left;
+  width: 80%;
+}
+
+
+
+
+
+@media (max-width: 991px){
+  .post2{
+    width: 98%;
+  }
+  #pro .rightplace{
+    width: 100%;
+  }
+}
+@media (max-width: 640px){
+  #getTages{
+    width: 100%;
+  }
+  #pro .rightplace{
+    width: 100%;
+  }
+}

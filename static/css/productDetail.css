@@ -1,0 +1,108 @@
+.post2{
+  width: 100%;
+  max-height: 500px;
+}
+.tag2 h4 a{
+  padding: 8px 14px 58px 13px;
+}
+.post2-info {
+  float: left;
+  width: 47%;
+  margin-left: 2%;
+  padding-top: 7em;
+}
+@media (max-width: 640px){
+  .post2{
+    max-height: 700px;
+  }
+  .post2-pic{
+    width: 100%;
+  }
+  .post2-info {
+    position: relative;
+    float: none;
+    width: 50%;
+    padding-top: 1em;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+}
+
+.post1{
+  position: relative;
+  width: 100%;
+  background: #9196c8;
+  margin-top: 20px;
+  border-radius: 4px;
+  text-align: center;
+  min-height: 410px;
+  padding: 30px;
+}
+.post1 .neirong{
+  width: 50%;
+  float: left;
+  padding-top: 3rem;
+  min-height: 130px;
+  border-bottom: 2px solid;
+}
+.post2-infoCom{
+  float: left;
+  width: 36%;
+  padding-top: 3em;
+}
+
+.sec_3 .sec_3_container{
+  position: relative;
+}
+.sec_3 .coop{
+  position: relative;
+  float: left;
+  text-align: center;
+  width: 25%;
+  margin-top: 20px;
+  background: #9196c8;
+  border-radius: 4px;
+  padding-top: 20px;
+  font-size: 16px;
+  overflow: hidden;
+  max-height: 166px;  
+}
+.coop > img {
+  width: 88%;
+  height: 118px;
+  border-radius: 24px;
+}
+.coop > p > a {
+  color: white;
+}
+
+.post2-pic {
+  float: left;
+  padding-right: 13px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+
+.post2_text{
+  margin: 10px;
+  color: white;
+  font-size: 20px;
+}
+.post2_text a{
+  color: white;
+}
+.neirongcontainer .tools{
+  position: absolute;
+  right: 60px;
+  bottom: 20px;
+}
+.neirongcontainer .blog{
+  text-align: left;
+}
+.neirongcontainer .blog img{
+  display: block;
+  margin: 0 auto;
+  max-width: 98%;
+}

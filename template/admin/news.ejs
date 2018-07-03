@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <!-- 最新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap-theme.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <!-- 自己服务器上的markdown的js文件 -->
+    <!-- <script src="http://47.94.165.122/MarkdownIME.js"></script>
+    <script src="http://47.94.165.122/showdown.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/showdown/1.3.0/showdown.min.js"></script>  
+
+    <style media="screen">
+        .shadow {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+
+        .mod_dialog {
+            position: fixed;
+            left: 0%;
+            top: 0%;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+        }
+    </style>
+    <script>
+        function compile() {
+            var text = document.getElementById("content").value;
+            var converter = new showdown.Converter();
+            var html = converter.makeHtml(text);
+            document.getElementById("result").innerHTML = html;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="page">
+        <%-include("./components/top.nav.ejs")%>
+        <div class="content-wrap">
+            <div>
+                <form action="?" method="post" enctype="multipart/form-data" role="form">
+                    <label for="leixing"> 类型：</label>
+                    <input type="text" name="leixing" id="leixing" class="form-control" placeholder="company代表学习记录，other代表行业新闻" />
+                    <label for="title"> 标题：</label>
+                    <input type="text" name="title" id="title" class="form-control" placeholder="请输入标题" />
+                    <label for="second_title"> 副标题：</label>
+                    <textarea name="second_title" id="second_title" class="form-control" rows="5" placeholder="输入副标题"></textarea>
+                    <!-- <label for="f1"> 封面图片：</label>
+                    <input type="file" name="url" id="f1" placeholder="选择文件" /> -->
+                    <label for="content"> 内容：</label>
+                    <textarea id="content" name="content" class="form-control" rows="10" onkeyup="compile()"></textarea>
+                    <div id="result"></div>
+                    <label for="post_time">发表时间</label>
+                    <input type="date" name="post_time" id="post_time" >
+                    <label for="author"> 作者：</label>
+                    <input type="text" name="author" id="author" class="form-contrl" />
+                    <br>
+                    <button type="submit" class="btn btn-default">添加</button>
+                </form>
+            </div>
+            <table class="table table-striped table-bordered table-hover container-fluid" style="table-layout:fixed">
+                <thead class="row">
+                    <tr>
+                        <th class="col-md-1">ID</th>
+                        <th class="col-md-1">类型</th>
+                        <th class="col-md-1">标题</th>
+                        <th class="col-md-2">副标题</th>
+                        <!-- <th class="col-md-1">图片</th> -->
+                        <th class="col-md-5">内容</th>
+                        <th class="col-md-1">作者</th>
+                        <th class="col-md-1">操作</th>
+                    </tr>
+                </thead>
+                <tbody class="row">
+                    <% for(var i=0;i<newsdata.length;i++){ %>
+                        <tr>
+                            <td>
+                                <%=newsdata[i].ID%>
+                            </td>
+                            <td>
+                                <%=newsdata[i].type%>
+                            </td>
+                            <td>
+                                <%=newsdata[i].title%>
+                            </td>
+                            <td>
+                                <%=newsdata[i].second_title%>
+                            </td>
+                            <!-- <td>
+                                <img width="160px" src="/upload/<%=newsdata[i].url%>" />
+                            </td> -->
+                            <td style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">
+                                <%=newsdata[i].content%>
+                            </td>
+
+                            <td>
+                                <%=newsdata[i].author%>
+                            </td>
+                            <td>
+                                <a class="btn btn-warning" href="?act=mod&id=<%=newsdata[i].ID%>">修改</a>
+                                <a class="btn btn-danger" href="?act=del&id=<%=newsdata[i].ID%>" onclick="return confirm('你真的要删吗？')">删除</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                </tbody>
+            </table>
+
+            <% if(typeof mod_data!='undefined'){ %>
+                <div class="shadow"></div>
+                <div class="mod_dialog">
+                    <form action="?" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="mod_id" value="<%= mod_data.ID %>" />
+                        <label for="leixingchange"> 类型：</label>
+                        <input type="text" id="leixingchange" name="leixing" class="form-control" value="<%= mod_data.type %>" />
+                        <label for="titlechange"> 标题：</label>
+                        <input type="text" id="titlechange" name="title" class="form-control" value="<%= mod_data.title %>" />
+                        <label for="second_title"> 副标题：</label>
+                        <textarea name="second_title" id="second_title" class="form-control" rows="5"><%= mod_data.second_title %></textarea>
+                        <!-- <label for="url"> 封面图片：</label>
+                        <input type="file" name="url" id="url" class="form-control" /> -->
+                        <label for="content"> 内容：</label>
+                        <textarea name="content" id="content" class="form-control" rows="10"><%= mod_data.content %></textarea>
+                        <br>
+                        <label for="post_time">发表时间</label>
+                        <input type="date" name="post_time"  value="<%= mod_data.post_time %>">
+                        <label for="authorchange"> 作者：</label>
+                        <input type="text" name="author" id="authorchange"value="<%= mod_data.author %>"/>
+                        <br>
+                        <input class="btn btn-danger" type="submit" value="修改" />
+                        <a class="btn btn-warning" href="/admin/news">取消修改</a>
+                        
+                    </form>
+                </div>
+                <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
